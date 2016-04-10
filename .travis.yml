@@ -1,0 +1,8 @@
+language: swift
+osx_image: xcode 7.3
+xcode_sdk: iphonesmulator9.3
+
+before_install:
+  - gem install xcpretty --no-document
+script:
+  - xcodebuild -project LRUCache.xcodeproj -scheme LRUCache -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6s,OS=9.3' test | xcpretty -c
